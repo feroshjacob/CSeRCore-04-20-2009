@@ -666,14 +666,19 @@ public class RenameTypeProcessor extends JavaRenameProcessor implements ITextUpd
 
 							} else if (element instanceof ILocalVariable) {
 								final ILocalVariable currentLocal= (ILocalVariable) element;
-								final boolean isParameter;
+								final boolean isParameter=false;
 
-								if (JavaModelUtil.isParameter(currentLocal)) {
+						/*
+						 * This is a quick change, have to change it later
+						 * 
+						 */
+							/*	if (JavaModelUtil.isParameter(currentLocal)) {
 									addMethodRename(unQualifiedTypeName, sugg, (IMethod) currentLocal.getParent());
 									isParameter= true;
 								} else
 									isParameter= false;
 
+*/
 								final String newLocalName= sugg
 										.suggestNewLocalName(currentLocal.getJavaProject(), currentLocal.getElementName(), isParameter, unQualifiedTypeName, getNewElementName());
 
